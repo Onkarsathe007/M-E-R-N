@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+</head>
+<body>
+    <script>
+        //syntax :
+        //setInterval(function_name,timeout)
+        //clearInterval()
+        //once executed, executed again after the interval ...agian and again 
+        let id1 = setInterval(()=>{
+        console.error("error ala re ..");
+        },5000);
+        
+        let id2 = setInterval(()=>{
+        console.warn("warning ala re ..");
+        },3000);
+        
+        
+         //Method to clear the interval 
+         window.clearInterval(id1);
+         window.clearInterval(id2);
+    </script>
+</body>
+</html>
