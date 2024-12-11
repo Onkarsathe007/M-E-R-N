@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems</title>
+</head>
+<body>
+    <script>
+        //Qs1.Write a JavaScript function that returns array 
+    //    //elements larger than a number
+    //    let num = parseInt(prompt("Enter a Number:"));
+    //    let arr = [1,2,3,4,5,6,7,8,9,10];
+    //    let larger_ele = [];
+    //    for(i=0;i<arr.length;i++)
+    //    {
+    //        if(arr[i] > num)
+    //        {
+    //            larger_ele[i] = arr[i];
+    //        }
+    //    }
+    //    console.log("Larger element :");
+    //    for(ele in larger_ele)
+    //    {
+    //        console.log(ele);
+    //    }
+    //    //write a javascript program to find out the unique characters fro the string 
+        
+    let str = "abcdabcdefgggh";
+
+    // Function to get a string with all unique elements
+    function getUnique(str) {
+        let ans = ""; // To store the unique characters
+    
+        for (let i = 0; i < str.length; i++) {
+            let currChar = str[i];
+            // If the current character is not already in `ans`, add it
+            if (ans.indexOf(currChar) === -1) {
+                ans += currChar;
+            }
+        }
+    
+        return ans; // Return the unique string
+    }
+    
+    // Call the function and log the result
+    console.log(getUnique(str)); // Output: "abcd" (all unique elements from the input string)    
+    </script>
+</body>
+</html>

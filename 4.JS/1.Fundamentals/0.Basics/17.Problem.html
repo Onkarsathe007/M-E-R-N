@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem</title>
+</head>
+<body>
+    <script>
+        let country = ["Australia", "Germany", "United States of America","india"];
+        let length = 0 ;
+        let index;
+        for(let i = 0 ;i < country.length; i++)
+        {
+            if(country[i].length > length)
+            {
+                length = country[i].length;
+                index = i;
+            }
+        }
+
+        function countVowels(str)
+        {
+            let vowel_count  = 0 ;
+            for(let i = 0; i<= str.length ; i++)
+            {
+                if(str[i] == "a" || str[i] == "e" || str[i] == "i" || str[i] == "o" ||str[i] == "u")
+                {
+                     vowel_count++;
+                } 
+            }
+            return vowel_count;
+        }
+        console.log(`Biggest string : ${country[index]}, at index ${index}`);
+        console.log(`No of vowel's in ${country[index]} is ${countVowels(country[index])}`)
+    </script>
+</body>
+</html>

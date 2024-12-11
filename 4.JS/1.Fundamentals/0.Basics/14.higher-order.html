@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>high-order-function</title>
+</head>
+<body>
+    <script>
+        // Higher order functions
+        function oddOrEvenFactory(request) {
+            if (request === "odd") {
+                let odd = function(n) {
+                    console.log(!(n % 2 === 0)); // true if odd
+                };
+                return odd;
+            } else if (request === "even") {
+                let even = function(n) {
+                    console.log(n % 2 === 0); // true if even
+                };
+                return even;
+            } else {
+                console.log("Wrong request");
+                return null;
+            }
+        }
+        
+        // Example Usage:
+        let request = "odd"; // Change to "even" for even numbers
+        let oddOrEvenFunction = oddOrEvenFactory(request);
+        
+        if (oddOrEvenFunction) {
+            oddOrEvenFunction(5); // Replace 5 with any number to test
+        }
+        
+    </script>
+</body>
+</html>

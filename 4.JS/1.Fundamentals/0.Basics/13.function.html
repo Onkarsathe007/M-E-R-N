@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function scope</title>
+</head>
+<body>
+    <script>
+        let num=20;         //global scope 
+        function myfun()
+        {
+          let num=10;       //local scope
+          console.log(`local variable : ${num}`);
+        }
+        myfun();
+        console.log(`global variable : ${num}`);
+
+
+        //{
+        //   let a  = 10;
+        //   const b =30;
+        //   var c =40;
+        //}
+        //   c is only accessbile ourtside the block 
+        //   var is only accessible 
+
+        //lexical scope 
+        //Lexical Scope nested uncover a variable defined outside a function can be accessible inside another function defined after the variable declaration.
+        function outerFunc()
+        {
+            let a  = 10;
+            let b = 20;
+            function innerFunc()
+            {
+                // here the outer variables are acessible inside the inner function as well
+                //This is known to be lexical scope 
+                console.log(a);
+                console.log(b);
+                let c = 10;
+                //but 'c' is not accessible outside the scope
+            }
+        }
+
+        //function expressions;
+        let sum = function(a,b)
+        {
+            return a + b;
+        }
+        let res  =  sum(1,2);
+        console.log("S  u  m:",res);
+
+        //function that takes one or more function as it's argument is known as a 'high-order-function'
+        function printGreet(func,count)
+        {
+            console.log("function -");
+            for(let i = 1; i<= count; i++)
+            {
+                func();
+            }
+        }
+
+        function func()
+        {
+            console.log("hello");
+        }
+        printGreet(func,10)
+    </script>
+</body>
+</html>

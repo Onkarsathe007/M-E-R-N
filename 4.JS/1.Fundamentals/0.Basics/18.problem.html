@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random range</title>
+</head>
+<body>
+    hi
+    <script>
+
+    let start = 100;
+    let end = 200;
+
+    function generateRandom(start, end) {
+    let diff = end - start;  // Calculate the difference between start and end
+    return Math.floor(Math.random() * diff) + start;  // Generate random number within the range
+    }
+
+    console.log(generateRandom(start, end));  // Example usage, prints a random number between 100 and 200
+
+    </script>
+</body>
+</html>
