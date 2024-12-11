@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guessing-game</title>
+</head>
+<body>
+    <script>
+        var max = 100 ;
+        var random_num = Math.floor(Math.random()*max)+1;
+        console.log(random_num);
+        var guess = parseInt(prompt("Guess the number ?"))
+
+        while(true)
+        {
+            if(guess == "quit")
+            {
+                console.log("You quit !");
+            }
+            if(guess == random_num)
+            {
+                alert("You find it !");
+                break;
+            }
+            else{
+                var guess = parseInt(prompt("Guess the number ?"));
+
+                if(guess > random_num)
+                {
+                    console.log("You've entered large number .");
+                }
+                else
+                {
+                    console.log("You've entered small number .");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

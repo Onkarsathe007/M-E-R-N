@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Enter 'Math' at console to get all the methods of the math object
+        // Constant's 
+        //Math.PI,Math.E
+        //abs(x) pow(x,y) 
+        //floor(n) --returns small whole number's than n 
+        //ceil(n)  --return large wholw number's than n
+        console.log(Math.floor(-5.5));  //-6
+        console.log(Math.floor(5.4));   //5
+        console.log(Math.floor(-3.2));  //-4
+        console.log(Math.ceil(-5.5));   //-5
+        console.log(Math.ceil(5.4));   //6
+        console.log(Math.ceil(-3.2))   //-3
+
+
+
+        //random --- Most IMP
+        // Basically random function returns any float random value.
+
+        //generating any random values
+        let rand = Math.random();
+        let num = rand * 10;   //this generate any random values between 1 to 10(limit)
+        console.log(Math.floor(num)+1);  //we add one it wont generate the value 1,10 
+
+        //Generate random numbers from 21 to 25
+        //adding 1 because it start from 0
+        let rndm =Math.floor((Math.random()*5+1)+20);
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>const</title>
+</head>
+<body>
+    <script>
+        let student =  {
+            name: "onakr",
+            age:23,
+            marks:[12,2,4,43,47,86],   //we can store array as well 
+        }
+
+        const pune = {
+            latitue : 9309093,
+            logitutude : 8282828,
+        }
+
+        //acccessing the properteies :
+        console.log(pune["latitue"]);
+        console.log(student.name);
+        console.log(student.age);
+        console.log(student.marks);
+
+
+        //e.g:
+        const obj = {
+            name : "onkar",
+            true : "a",
+            undefined :"b",
+            2 : "x",
+            null : "onkar",
+        }
+        //every property is treated as a string in JS.
+        //first  it checks index of the object then find the equivalent str as index.
+        console.log(obj["true"]);
+
+        //adding new prop to student obj 
+        student.roll = 272078;
+        student.prn = 22420257;
+
+        //updating the value of the object
+
+        student.age = 18;
+
+        //to delete the properties
+        delete student.age;
+
+    </script>
+</body>
+</html>
