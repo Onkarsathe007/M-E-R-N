@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for each </title>
+</head>
+<body>
+    <script>
+        //for-each is higher order function that takes that takes function as 
+        //its parameter .
+
+        let arr = [1,2,3,4,5,6,7];
+        function printEle(el)
+        {
+            console.log(el)
+        }
+        arr.forEach(printEle);
+
+        //OR 
+
+        arr.forEach(function(el){
+            console.log(el);
+        });
+
+        //Using 'arrow' function :
+
+        ar = ["hel","hello","namate","bonjour","uoifdd"];
+        ar.forEach((el)=>{
+            console.log(el)
+        })
+        
+        //dlfjds
+        let students = [
+            {
+                name : "onkar",
+                roll :12,
+                age : 13
+            }, 
+            
+            {
+                name : "suhas",
+                roll :13,
+                age : 18,
+            }, 
+
+            {
+                name : "sujal",
+                roll :15,
+                age : 19,
+            },
+        ];
+        students.forEach(function(ele){
+            console.log(ele.roll);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //spread : The spread operator (...) in JavaScript is used to unpack elements from an array or object into a new array or object. It allows you to easily copy, merge, or spread values.
+        let arxr = [1,2,3,4,5,5,6];
+        //we need use index to access the ele of arr,
+        console.log(arxr);
+        //op : [1, 2, 3, 4, 5, 5, 6]
+        console.log(...arxr);
+        //op : 1 2 3 4 5 5 6
+
+    
+        let arr = [1, 2, 3, 4, 5]; // Original array
+        let newArr = [...arr]; // Creating a new array by spreading the elements of arr
+        let chars = [..."hello"]; // Spreading the characters of the string "hello" into an array
+
+        let odd = [1, 3, 5, 7, 9]; // Array of odd numbers
+        let even = [2, 4, 6, 8, 14]; // Array of even numbers
+        let nums = [...odd, ...even]; // Merging the odd and even arrays using the spread operator
+
+    </script>
+</body>
+</html>

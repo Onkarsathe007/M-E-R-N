@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //map function : 
+        //The map function in JavaScript is used to create a new array 
+        // by applying a function to each element of an existing array
+
+        let num =[1,2,3,4];
+        let double = num.map((ele)=>{
+            return ele * ele;
+        });
+
+        //example two .
+        let students = [
+            {
+                name : "onkar",
+                roll :12,
+                age : 13
+            }, 
+            
+            {
+                name : "suhas",
+                roll :13,
+                age : 18,
+            }, 
+
+            {
+                name : "sujal",
+                roll :15,
+                age : 19,
+            },
+        ];
+        //By using arrow function. 
+        let rolls =  students.map((el)=>{
+            return el.age;
+        });
+        //By using normal function.
+        let age = students.map(function(el){
+            return el.age;
+        });
+        
+        console.log(rolls);
+        console.log(age);
+    </script>
+</body>
+</html>

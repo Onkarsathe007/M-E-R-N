@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+<body>
+    <script>
+        let names = ["Tony","peter","Strange","bruce","steve","loki"];
+        // let winner = name[0];
+        // let runnerUp = names[1];
+        // let bestPlayed = names[names.length-1];
+
+        let [winner,runnerUp,bestPlayed,...others] = names;
+        console.log(others);
+        //winner - first index
+        //runerUP - runnerUp
+        //...other - other array wil be created and rest of the values will be stored into this array.
+
+        
+
+        //destructing for the objects
+        const student = {
+            name : "onakar",
+            age : 18 ,
+            class : "SY",
+            subject : ["DSA","DBMS"],
+            email : "onkar.22420257@viit.ac.in",
+        }
+        //variables .
+        //let name = student.name;
+        //let email = student.email;
+
+        //not suitable for string large amount of properties 
+
+
+
+        let {name : UserName,age= 19,marks=91} = student;
+        //here we have given value of age as a 19 but value will be in age var is 18(It  has more precedence)
+        //name,age these are keys  
+        //userName is a name of the variable
+        //e.g.In 'name' variable there will be value of name in student object
+
+
+    </script>
+</body>
+</html>

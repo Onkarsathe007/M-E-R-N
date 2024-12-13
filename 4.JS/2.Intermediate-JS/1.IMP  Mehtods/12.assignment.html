@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment</title>
+</head>
+<body>
+    <script>
+        //square and sum the array elements, and then find the average of the array 
+        let arr = [1,2,3,4,5,6,7,8,9,10];
+        res =1;
+        let value = arr.reduce((res,ele)=>{
+            return res + ele*ele;
+        });
+        console.log(`Value : ${value/arr.length}`);
+
+        //create an array by using 'map' function whose element is greater than 5 than original element .
+        let nums = [1,2,3,4,5];
+        let newArray = nums.map((ele)=>{
+            return ele+5;
+        });
+        console.log(...newArray);
+
+        //create an array whose elements are in uppercase in words in an original array 
+        let strs = ["a","b","c","d","e","f"];
+        let i= 0;
+        let capStr = strs.map((ele)=>{
+            return ele.toUpperCase();
+        });
+        console.log("Capital array is :",...capStr);
+ 
+        //;lfjaslkjf
+        let arx= [1,2,3,4,5];
+        function doubleAndReturn(arx,...args)
+        {
+            console.log(arx);
+            return args.map(arg => arg * 2);
+        }
+        const result = doubleAndReturn(arx, 1, 2, 3, 4, 5);
+        console.log(result);
+
+
+        //merge objects .
+        const mergeObjects = (obj1, obj2) => ({ ...obj1, ...obj2 });
+        // Example usage:
+        const results = mergeObjects({ a: 1, b: 2 }, { c: 3, d: 4 });
+        console.log(result); // Output: { a: 1, b: 2, c: 3, d: 4 }
+    </script>
+</body>
+</html>

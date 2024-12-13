@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //write a JS program to check weather the all the numbers are divisible by 5 
+        let arr = [5,1,1,1,11,1,9,-9,20];
+        let is_div = arr.every((ele)=> ele  %  5 == 0);
+        console.log(is_div);
+
+        let min = arr.reduce((min,ele)=>{
+            if(ele > min)
+            {
+                return min;
+                //value returned as accumulator 
+            }
+            else{
+                return ele;
+            }
+        });
+        console.log("Minimum ele : ",min)
+    </script>
+</body>
+</html>

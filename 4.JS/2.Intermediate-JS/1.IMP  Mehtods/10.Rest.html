@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            // ..args is now an array, whatever the values that are passed to an 
+            // function that are stored into an array 
+            function sum(...args)
+            {
+                for(let i = 0; i <= args.length - 1; i ++)
+                {
+                    console.log("You gave us :",args[i]);
+                }
+            }
+            function min(a,b,c,d)
+            {
+                console.log(arguments);
+                console.log(arguments.length);
+            //  arguments.push(23;    
+                //output : Arguments(5) [1, 2, 3, 3, 5, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+                //Arguments is collection not a function,so we cant apply the functions to it.
+            }
+            function demo(msg,...args)
+            {
+                concole.log(args)
+            }
+            demo("hello",1,2,3,4,4);  
+            //the first parameter will be always 'hello'
+    </script>
+</body>
+</html>

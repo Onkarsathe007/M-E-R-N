@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment questions</title>
+</head>
+<body>
+    <script>
+
+        //
+//      let fun = () => {
+//          console.log("Enter the number of elements in the array:");
+//          let num = parseInt(prompt());
+//          
+//          let arr = []; // Initialize an empty array
+//          console.log("Enter the elements of the array:");
+//          
+//          for (let i = 0; i < num; i++) {
+//              let element = parseInt(prompt(`Enter element ${i + 1}:`));
+//              arr.push(element); // Push each element to the array
+//          }
+//          
+//          let sum = 0;
+//          for (let i = 0; i < arr.length; i++) {
+//              sum += arr[i];
+//          }
+//          
+//          let avg = sum / arr.length;
+//          console.log(`The average is ${avg}`);
+//      };
+//      fun();
+
+
+        let isEven = ()=>(num)=>{
+            if(num % 2 == 0)
+            {
+                return true;
+            }
+            else{
+                return false;
+            }
+        };
+        let checkEven = isEven(); // Get the inner function
+        let num = parseInt(prompt("Enter a Number:"));
+        if (checkEven(num)) {
+            console.log("EVEN");
+        } else {
+            console.log("ODD");
+        }
+    </script>
+</body>
+</html>
