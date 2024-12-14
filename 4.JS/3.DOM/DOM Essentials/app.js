@@ -123,3 +123,6 @@ console.dir(divAnchor);
     bd.appendChild(para);
     let bx = document.querySelector(".box");
     bx.appendChild(para);
+//* Using this for event listener
+    
+    btn
