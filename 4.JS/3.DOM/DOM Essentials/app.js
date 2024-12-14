@@ -73,9 +73,7 @@ console.dir(divAnchor);
 //getters ans setters in the javascript :
     let img = document.querySelector('img');
     console.log(img.getAttribute('id'));    //for getting the attribute
-
     img.setAttribute('id','bid');
-
 
 
 //**manipulating the style 
