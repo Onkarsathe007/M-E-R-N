@@ -28,6 +28,6 @@ function giveAlert(e)
 {
     //console.log(e);  // this give an info about the event 
     console.log(e.key); //This will specifically give the 'key' that we've pressed      
-    console.log(e.code;)
+    console.log(e.code);
     console.log("key released !");   
 }

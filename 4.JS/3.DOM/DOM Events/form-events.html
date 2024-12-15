@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="" id="" placeholder="Enter your name:">
+        <button type="submit">Submit</button>
+        <script>
+            let formObj = document.querySelector("form");
+            let ip = document.querySelector("input");
+
+            formObj.addEventListener("submit",function(e){
+               e.preventDefault();   //prevent from default work
+               console.log("Value :",ip.value)  //accessing the values of input type 
+               alert("form submited");
+               //although we can also access the values in the form by using the index.
+               //formObj[0]  //first element 
+               //formObj[1]  //second element 
+
+            })
+
+        </script>
+    </form>
+</body>
+</html>

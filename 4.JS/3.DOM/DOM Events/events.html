@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="" placeholder="Enter your name ">
+    <button>woo</button>
+    <script>
+
+        // change Event : once you made the changes and then you change the state somewhere change will track that value 
+        //input event : fires for every change
+        let ip = document.querySelector("input");
+        ip.addEventListener("input",function(e){
+            console.log("Input Event occured !");
+            console.log("Final value  :",this.value)
+        });
+
+        ip.addEventListener("change",function(e){
+            console.log("change Event occured !");
+            console.log("changed  :",this.value)
+        });
+
+
+    </script>
+</body>
+</html>
