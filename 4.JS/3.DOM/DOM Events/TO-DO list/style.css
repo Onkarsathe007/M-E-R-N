@@ -1,0 +1,9 @@
+.todo{
+    width: 60%;
+    height: 500px;
+    background-color: skyblue;
+    font-weight: 100;
+    font-family: monospace;
+    padding: 1%;
+    border-radius: 10px;
+}
