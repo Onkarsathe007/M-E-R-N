@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let url = 'https://catfact.ninja/fact';
+        async function getFacts(){
+            try{
+            let resp =  await fetch(url);
+            let data =  await resp.json();   //json is also asynchonous function so it we use 'await' for it also 
+            console.log(data);
+            console.log(data.fact);
+            console.log(resp);      //promise value is undefind,because JS is synchronous and its printed the result but dont knwo weather the result is fetched from the API or not 
+            // PromiseResult :  Undefind   , beacuse it was not successfull so we use 'await    '
+            }catch(e)
+            {
+                console.log(e);
+            }
+        }
+
+        getFacts();  
+    </script>
+</body>
+</html>
