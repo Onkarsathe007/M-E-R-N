@@ -10,12 +10,14 @@ function savetoDB(data){
     });
 }
 
-    savetoDB("Employee-name").then((result)=>{
-        console.log("Result of promise : ",result)   //handels resolve
-        })
-        .then((result)=>{
-            console.log('Result of Promise',result)  //handels resolve
-        })
-        .catch((error)=>{
-            console.log("Result rejected :",error);  //handles rejected 
-        });
+savetoDB("Employee-name")
+    .then((result) => {
+        console.log("Result of promise : ", result);  // Handles resolve
+    })
+    .then((result) => {
+        //this result will return 'undefind' value,because Promises in JavaScript only pass the resolved value from one .then() to the next if they return something explicitly.
+        console.log('Result of Promise', result);  // Handles resolve
+    })
+    .catch((error) => {
+        console.log("Result rejected :", error);  // Handles rejected
+    });
