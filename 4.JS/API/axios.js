@@ -28,5 +28,6 @@ async function getFacts(){
 
     } catch (e) {
         console.log("ERROR - ",e);
+        return "No fact found !";
     }
 }
