@@ -19,13 +19,29 @@
 let url ="https://catfact.ninja/fact";
 let para = document.querySelector("p");
 let btn = document.querySelector("button");
-btn.addEventListener("click",getFacts);
+btn.addEventListener("click",async ()=>{
+    let fact = await getFacts();
+    para.textContent = fact;
+    console.log(fact);
+});
 async function getFacts(){
     try {
-        let res = await axios.get(url);
-        para.textContent = res.data.fact;
-        console.log(res.data.fact);
-
+        let res = await axios.get(url);  //axios.get(url) returns a Promise
+                                        // This Promise represents the asynchronous operation of making an HTTP GET request to the specified URL.
+//      res will store 'Axios Response Object'
+//      which looks like : 
+/*
+        {
+           data: { ... }, // The response data (JSON, text, etc.)
+           status: 200,   // HTTP status code
+           statusText: "OK", // HTTP status text
+           headers: { ... }, // Response headers
+           config: { ... },  // Axios request configuration
+           request: { ... }  // The request object (platform-specific)
+        }
+*/        
+//In the JSON data there is fact 'key' 
+        return res.data.fact;       
     } catch (e) {
         console.log("ERROR - ",e);
         return "No fact found !";
