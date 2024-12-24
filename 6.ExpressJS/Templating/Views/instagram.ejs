@@ -1,0 +1,25 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/style.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>This Account Belong's to : <%= data.name %> <br></h1>
+        <h2>followers : <%= data.followers %> <br></h2>
+        <h2>following : <%= data.following %> <br></h2>
+        <button>followers</button>
+        <button>Follwing</button>
+        <hr>
+        <%for(let post of data.posts){%>
+            <img src="<%=post.image%>" alt="some image" style="width: 200px;height:200px">
+            <h3>Likes: <%= post.likes%></h3>
+            <h3>Comments: <%=post.comments%></h3>
+        <% } %>
+       
+        
+    </body>
+    <script src="/js/app.js"></script>
+    </html>
