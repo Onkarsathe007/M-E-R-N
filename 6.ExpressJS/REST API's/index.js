@@ -87,4 +87,6 @@ app.patch("/posts/id/:id", (req, res) => {
         posts = posts.filter(post => post.id !== posts.id);
 
         res.redirect("/posts/");
-    })
+    });
+
+    
