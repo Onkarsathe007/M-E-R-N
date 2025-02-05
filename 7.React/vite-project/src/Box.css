@@ -1,0 +1,9 @@
+p {
+    color: rgb(0, 88, 252);
+}
+#box {
+    border: 2px solid rgb(0, 0, 0);
+    width: 200px;
+    height: 200px;
+    border-radius: 1rem;
+}
