@@ -27,11 +27,8 @@ function Something(props) { //First way to pass the args
     )
   }
   function Discount({price}){
-    if (price > 100) {
-      return <p>You got 10% discoount</p>
-    }else{
-      return <p>Buy Upto 100 for discount</p>
-    }
+    let isdiscount = price > 100 ? "5%" : "";
+    return <p>{isdiscount}</p>
   }
   function Box(){
     return (
@@ -40,7 +37,7 @@ function Something(props) { //First way to pass the args
         <Description title = "onkar sathe"/>  
         <Label title = "   this is title "/>
         <PassArray arr={["I am","onkar","sathe"]}/>
-        <Discount price = {2000}/>
+        <Discount price = {200}/>
        </div>                                                                                             
     )
   }
