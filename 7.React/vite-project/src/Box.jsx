@@ -14,10 +14,10 @@ function Something(props) { //First way to pass the args
   function Label() {
     return <p>this is the label</p>
   }  
-  function PassArray(props){
+  function PassArray(){
     //creating an objects
     let object = {a : "hello", b : "bello" , c : "cello"};
-    let features =["hi-tech","durable","creatice"];
+    let features =[<li> "hi-tech"</li>, <li>"durable"</li> ,<li>"creatice"</li>];
     return(
       <>
             <p>{features}</p>
@@ -26,6 +26,13 @@ function Something(props) { //First way to pass the args
 
     )
   }
+  function Discount({price}){
+    if (price > 100) {
+      return <p>You got 10% discoount</p>
+    }else{
+      return <p>Buy Upto 100 for discount</p>
+    }
+  }
   function Box(){
     return (
        <div id="box">
@@ -33,7 +40,7 @@ function Something(props) { //First way to pass the args
         <Description title = "onkar sathe"/>  
         <Label title = "   this is title "/>
         <PassArray arr={["I am","onkar","sathe"]}/>
-        <PassArray obj={{a : "I am",b : "onkar",c :"sathe"}}/>  
+        <Discount price = {2000}/>
        </div>                                                                                             
     )
   }
