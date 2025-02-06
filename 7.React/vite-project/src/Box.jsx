@@ -27,8 +27,9 @@ function Something(props) { //First way to pass the args
     )
   }
   function Discount({price}){
+    let styles = {color :price >  100 ? "red" : "black"};  // we specified the styling here
     let isdiscount = price > 100 ? "5%" : "";
-    return <p>{isdiscount}</p>
+    return <p style={styles}>{isdiscount}</p>
   }
   function Box(){
     return (
