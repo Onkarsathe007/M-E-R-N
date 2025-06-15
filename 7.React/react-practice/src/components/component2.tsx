@@ -1,7 +1,8 @@
 //Use state.
 import { useState } from "react";
+import type Component1 from "./component1";
 
-function MyComponent() {
+function Component2() {
   const [count, setCount] = useState(0);
   //count - variable.
   //setcount - function.
@@ -16,4 +17,4 @@ function MyComponent() {
   );
 }
 
-export default MyComponent;
+export default Component2;
