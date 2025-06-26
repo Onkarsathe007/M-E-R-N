@@ -4,4 +4,5 @@ import { Link } from "react-router-dom";
     About
 </Link>
 
+//the a tag refreshes the page, where link does not 
 
