@@ -61,4 +61,9 @@ async function savePostData(user_id) {
         .catch((e) => { console.log("An error " + e + "occured") });
 }
 
-savePostData("theonakarsathe");
+const getData = (async () => {
+    let result = await postModel.findOne({}).populate("user");
+    console.log(result);
+});
+
+getData();
