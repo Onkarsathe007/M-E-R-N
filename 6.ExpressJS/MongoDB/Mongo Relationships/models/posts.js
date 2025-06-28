@@ -39,10 +39,10 @@ const userModel = mongoose.model("user", userSchema);
 
 function saveUserData() {
     var user1 = new userModel({
-        username: "theonakarsathe",
-        bio: "I want ctrl",
-        followers: 1000,
-        follwing: 272,
+        username: "Priti Sathe",
+        bio: "I am priti, I love pets",
+        followers: 2322,
+        follwing: 4,
     });
     user1.save();
 }
@@ -53,7 +53,7 @@ async function savePostData(user_id) {
             console.log(res)
             var post = new postModel({
                 user: res._id,
-                comment: "perfect post",
+                comment: "very bad",
                 username: res.username,
             });
             post.save();
@@ -61,9 +61,20 @@ async function savePostData(user_id) {
         .catch((e) => { console.log("An error " + e + "occured") });
 }
 
+var deleteUser = async (user) => {
+    userModel.deleteOne({ username: user })
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((e) => { console.log("An error" + e + "Occured") })
+    //In this function problem is that, we are not deleting an posts that is releventreferal to the user.
+    // so, we use mongoose middlewares.
+}
+
+
 const getData = (async () => {
     let result = await postModel.findOne({}).populate("user");
     console.log(result);
 });
 
-getData();
+deleteUser("theonakarsathe");
