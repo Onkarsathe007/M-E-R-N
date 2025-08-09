@@ -1,0 +1,37 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      fsp:
+        specifier: ^0.1.2
+        version: 0.1.2
+
+packages:
+
+  fs-exists@0.1.1:
+    resolution: {integrity: sha512-3t/3hbOzkQKpYi0Ib4L+m3W/Bkl8zchJmk8cYtR/6i8J4cvqKLVn/En4qBiAl5uXnX3WMDB/k3fbdWXTa+xF6w==}
+    engines: {node: 0.10.x, npm: 1.2.x}
+
+  fsp@0.1.2:
+    resolution: {integrity: sha512-rTBy+06ugFTn/R7U8YUKyX6+fa+5h5kUbioNIfs8iOhfg+/u1nuI7UNNfeXRlJ6Ngcm0ZIMHTe6g/Q51h24qcA==}
+    engines: {node: 0.10.x}
+
+  when@3.7.8:
+    resolution: {integrity: sha512-5cZ7mecD3eYcMiCH4wtRPA5iFJZ50BJYDfckI5RRpQiktMiYTcn0ccLTZOvcbBume+1304fQztxeNzNS9Gvrnw==}
+
+snapshots:
+
+  fs-exists@0.1.1: {}
+
+  fsp@0.1.2:
+    dependencies:
+      fs-exists: 0.1.1
+      when: 3.7.8
+
+  when@3.7.8: {}

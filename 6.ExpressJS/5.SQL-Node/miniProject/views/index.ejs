@@ -1,0 +1,58 @@
+<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1 style="text-align: center;">Tasks </h1>
+    <p>
+
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Task</th>
+                <th>Priority</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (var i=0; i < data.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= data[i].id %>
+                    </td>
+                    <td>
+                        <%= data[i].task %>
+                    </td>
+                    <td>
+                        <%= data[i].priority %>
+                    </td>
+                    <td>
+
+                        <form method="POST" action="/task/<%= data[i].id %>?_method=DELETE">
+                            <input type="hidden" name="hiddenId" value=``>
+                            <button onclick="">completed</button>
+                        </form>
+                    </td>
+
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+    </p>
+    <p name="task"></p>
+    <form method="post" action="/task">
+
+    </form>
+    <button type="submit" id="addBtn" name="addBtn" onclick="fun()">add task</button>
+</body>
+<script src="script.js">
+
+</script>
+
+</html>

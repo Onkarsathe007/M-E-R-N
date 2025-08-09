@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 async function ConnectMongo() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/sample');
+    await mongoose.connect('mongodb://127.0.0.1:27017/Fastshop');
 }
 
 ConnectMongo()
@@ -22,7 +22,6 @@ const postSchema = new Schema({
 });
 
 const postModel = new mongoose.model("post", postSchema);
-
 
 const userSchema = new Schema({
     createdAt: {

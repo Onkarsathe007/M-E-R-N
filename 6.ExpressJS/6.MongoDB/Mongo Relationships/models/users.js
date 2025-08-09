@@ -24,14 +24,5 @@ var userSchema = new Schema({
 //creating an model.
 const User = mongoose.model("User", userSchema);
 
-var user1 = new User({
-    name: "onkar Sathe",
-    age: 18,
-    address: [{
-        city: "pune",
-        Village: "Ahmednagar",
-        pincode: 901919
-    }]
-});
 
 user1.save();
