@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Write Journal</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-serif">
+
+  <!-- Writing Area -->
+  <main class="max-w-3xl mx-auto py-10 px-4">
+    <form action="/journal" method="POST" class="flex flex-col min-h-screen"> 
+      <!-- Journal Input -->
+      <textarea 
+        name="journal" 
+        placeholder="Start writing your thoughts here..." 
+        class="flex-1 resize-none w-full text-xl leading-relaxed outline-none border-0 focus:ring-0 bg-transparent placeholder-gray-400"
+        rows="20"
+        required></textarea>
+      
+      <!-- Submit Button -->
+      <div class="text-center mt-6">
+        <button type="submit" 
+                class="bg-indigo-600 text-white px-8 py-3 rounded-xl shadow hover:bg-indigo-700 transition">
+          Submit Journal
+        </button>
+      </div>
+    </form>
+  </main>
+
+</body>
+</html>
+

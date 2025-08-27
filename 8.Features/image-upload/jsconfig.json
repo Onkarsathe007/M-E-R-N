@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "lib": ["ES2020"],
+    "allowJs": true,
+    "checkJs": false,
+    "maxNodeModuleJsDepth": 2,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/@types/*"]
+    }
+  },
+  "include": [
+    "**/*.js",
+    "**/*.json"
+  ],
+  "exclude": [
+    "node_modules",
+    "uploads"
+  ]
+}

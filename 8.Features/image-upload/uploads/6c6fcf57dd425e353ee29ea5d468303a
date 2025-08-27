@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title><%= title %></title>
+</head>
+<body>
+  <h1>Hello, <%= user.name %>!</h1>
+
+  <% if (user.isAdmin) { %>
+    <p>Welcome back, Admin!</p>
+  <% } else { %>
+    <p>Welcome, guest.</p>
+  <% } %>
+
+  <ul>
+    <% for (let i = 0; i < items.length; i++) { %>
+      <li><%= items[i] %></li>
+    <% } %>
+  </ul>
+
+  <%# This is an EJS comment, won’t render in HTML %>
+</body>
+</html>
+

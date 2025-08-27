@@ -26,6 +26,9 @@ importers:
       path:
         specifier: ^0.12.7
         version: 0.12.7
+      pnpm:
+        specifier: ^10.14.0
+        version: 10.14.0
 
 packages:
 
@@ -361,6 +364,11 @@ packages:
   picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
+
+  pnpm@10.14.0:
+    resolution: {integrity: sha512-rSenlkG0nD5IGhaoBbqnGBegS74Go40X5g4urug/ahRsamiBJfV5LkjdW6MOfaUqXNpMOZK5zPMz+c4iOvhHSA==}
+    engines: {node: '>=18.12'}
+    hasBin: true
 
   process@0.11.10:
     resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
@@ -841,6 +849,8 @@ snapshots:
       util: 0.10.4
 
   picomatch@2.3.1: {}
+
+  pnpm@10.14.0: {}
 
   process@0.11.10: {}
 
