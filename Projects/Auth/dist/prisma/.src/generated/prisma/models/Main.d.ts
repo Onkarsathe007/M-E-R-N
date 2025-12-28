@@ -1,0 +1,972 @@
+import type * as runtime from "@prisma/client/runtime/client";
+import type * as Prisma from "../internal/prismaNamespace.js";
+/**
+ * Model Main
+ *
+ */
+export type MainModel = runtime.Types.Result.DefaultSelection<Prisma.$MainPayload>;
+export type AggregateMain = {
+    _count: MainCountAggregateOutputType | null;
+    _min: MainMinAggregateOutputType | null;
+    _max: MainMaxAggregateOutputType | null;
+};
+export type MainMinAggregateOutputType = {
+    id: string | null;
+    username: string | null;
+    password: string | null;
+    refreshToken: string | null;
+};
+export type MainMaxAggregateOutputType = {
+    id: string | null;
+    username: string | null;
+    password: string | null;
+    refreshToken: string | null;
+};
+export type MainCountAggregateOutputType = {
+    id: number;
+    username: number;
+    password: number;
+    refreshToken: number;
+    _all: number;
+};
+export type MainMinAggregateInputType = {
+    id?: true;
+    username?: true;
+    password?: true;
+    refreshToken?: true;
+};
+export type MainMaxAggregateInputType = {
+    id?: true;
+    username?: true;
+    password?: true;
+    refreshToken?: true;
+};
+export type MainCountAggregateInputType = {
+    id?: true;
+    username?: true;
+    password?: true;
+    refreshToken?: true;
+    _all?: true;
+};
+export type MainAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Filter which Main to aggregate.
+     */
+    where?: Prisma.MainWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of Mains to fetch.
+     */
+    orderBy?: Prisma.MainOrderByWithRelationInput | Prisma.MainOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the start position
+     */
+    cursor?: Prisma.MainWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` Mains from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` Mains.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned Mains
+    **/
+    _count?: true | MainCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+    **/
+    _min?: MainMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+    **/
+    _max?: MainMaxAggregateInputType;
+};
+export type GetMainAggregateType<T extends MainAggregateArgs> = {
+    [P in keyof T & keyof AggregateMain]: P extends '_count' | 'count' ? T[P] extends true ? number : Prisma.GetScalarType<T[P], AggregateMain[P]> : Prisma.GetScalarType<T[P], AggregateMain[P]>;
+};
+export type MainGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.MainWhereInput;
+    orderBy?: Prisma.MainOrderByWithAggregationInput | Prisma.MainOrderByWithAggregationInput[];
+    by: Prisma.MainScalarFieldEnum[] | Prisma.MainScalarFieldEnum;
+    having?: Prisma.MainScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: MainCountAggregateInputType | true;
+    _min?: MainMinAggregateInputType;
+    _max?: MainMaxAggregateInputType;
+};
+export type MainGroupByOutputType = {
+    id: string;
+    username: string;
+    password: string;
+    refreshToken: string | null;
+    _count: MainCountAggregateOutputType | null;
+    _min: MainMinAggregateOutputType | null;
+    _max: MainMaxAggregateOutputType | null;
+};
+type GetMainGroupByPayload<T extends MainGroupByArgs> = Prisma.PrismaPromise<Array<Prisma.PickEnumerable<MainGroupByOutputType, T['by']> & {
+    [P in ((keyof T) & (keyof MainGroupByOutputType))]: P extends '_count' ? T[P] extends boolean ? number : Prisma.GetScalarType<T[P], MainGroupByOutputType[P]> : Prisma.GetScalarType<T[P], MainGroupByOutputType[P]>;
+}>>;
+export type MainWhereInput = {
+    AND?: Prisma.MainWhereInput | Prisma.MainWhereInput[];
+    OR?: Prisma.MainWhereInput[];
+    NOT?: Prisma.MainWhereInput | Prisma.MainWhereInput[];
+    id?: Prisma.StringFilter<"Main"> | string;
+    username?: Prisma.StringFilter<"Main"> | string;
+    password?: Prisma.StringFilter<"Main"> | string;
+    refreshToken?: Prisma.StringNullableFilter<"Main"> | string | null;
+};
+export type MainOrderByWithRelationInput = {
+    id?: Prisma.SortOrder;
+    username?: Prisma.SortOrder;
+    password?: Prisma.SortOrder;
+    refreshToken?: Prisma.SortOrderInput | Prisma.SortOrder;
+};
+export type MainWhereUniqueInput = Prisma.AtLeast<{
+    id?: string;
+    username?: string;
+    AND?: Prisma.MainWhereInput | Prisma.MainWhereInput[];
+    OR?: Prisma.MainWhereInput[];
+    NOT?: Prisma.MainWhereInput | Prisma.MainWhereInput[];
+    password?: Prisma.StringFilter<"Main"> | string;
+    refreshToken?: Prisma.StringNullableFilter<"Main"> | string | null;
+}, "id" | "username">;
+export type MainOrderByWithAggregationInput = {
+    id?: Prisma.SortOrder;
+    username?: Prisma.SortOrder;
+    password?: Prisma.SortOrder;
+    refreshToken?: Prisma.SortOrderInput | Prisma.SortOrder;
+    _count?: Prisma.MainCountOrderByAggregateInput;
+    _max?: Prisma.MainMaxOrderByAggregateInput;
+    _min?: Prisma.MainMinOrderByAggregateInput;
+};
+export type MainScalarWhereWithAggregatesInput = {
+    AND?: Prisma.MainScalarWhereWithAggregatesInput | Prisma.MainScalarWhereWithAggregatesInput[];
+    OR?: Prisma.MainScalarWhereWithAggregatesInput[];
+    NOT?: Prisma.MainScalarWhereWithAggregatesInput | Prisma.MainScalarWhereWithAggregatesInput[];
+    id?: Prisma.StringWithAggregatesFilter<"Main"> | string;
+    username?: Prisma.StringWithAggregatesFilter<"Main"> | string;
+    password?: Prisma.StringWithAggregatesFilter<"Main"> | string;
+    refreshToken?: Prisma.StringNullableWithAggregatesFilter<"Main"> | string | null;
+};
+export type MainCreateInput = {
+    id?: string;
+    username: string;
+    password: string;
+    refreshToken?: string | null;
+};
+export type MainUncheckedCreateInput = {
+    id?: string;
+    username: string;
+    password: string;
+    refreshToken?: string | null;
+};
+export type MainUpdateInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    username?: Prisma.StringFieldUpdateOperationsInput | string;
+    password?: Prisma.StringFieldUpdateOperationsInput | string;
+    refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+};
+export type MainUncheckedUpdateInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    username?: Prisma.StringFieldUpdateOperationsInput | string;
+    password?: Prisma.StringFieldUpdateOperationsInput | string;
+    refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+};
+export type MainCreateManyInput = {
+    id?: string;
+    username: string;
+    password: string;
+    refreshToken?: string | null;
+};
+export type MainUpdateManyMutationInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    username?: Prisma.StringFieldUpdateOperationsInput | string;
+    password?: Prisma.StringFieldUpdateOperationsInput | string;
+    refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+};
+export type MainUncheckedUpdateManyInput = {
+    id?: Prisma.StringFieldUpdateOperationsInput | string;
+    username?: Prisma.StringFieldUpdateOperationsInput | string;
+    password?: Prisma.StringFieldUpdateOperationsInput | string;
+    refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+};
+export type MainCountOrderByAggregateInput = {
+    id?: Prisma.SortOrder;
+    username?: Prisma.SortOrder;
+    password?: Prisma.SortOrder;
+    refreshToken?: Prisma.SortOrder;
+};
+export type MainMaxOrderByAggregateInput = {
+    id?: Prisma.SortOrder;
+    username?: Prisma.SortOrder;
+    password?: Prisma.SortOrder;
+    refreshToken?: Prisma.SortOrder;
+};
+export type MainMinOrderByAggregateInput = {
+    id?: Prisma.SortOrder;
+    username?: Prisma.SortOrder;
+    password?: Prisma.SortOrder;
+    refreshToken?: Prisma.SortOrder;
+};
+export type StringFieldUpdateOperationsInput = {
+    set?: string;
+};
+export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null;
+};
+export type MainSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    id?: boolean;
+    username?: boolean;
+    password?: boolean;
+    refreshToken?: boolean;
+}, ExtArgs["result"]["main"]>;
+export type MainSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    id?: boolean;
+    username?: boolean;
+    password?: boolean;
+    refreshToken?: boolean;
+}, ExtArgs["result"]["main"]>;
+export type MainSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    id?: boolean;
+    username?: boolean;
+    password?: boolean;
+    refreshToken?: boolean;
+}, ExtArgs["result"]["main"]>;
+export type MainSelectScalar = {
+    id?: boolean;
+    username?: boolean;
+    password?: boolean;
+    refreshToken?: boolean;
+};
+export type MainOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "username" | "password" | "refreshToken", ExtArgs["result"]["main"]>;
+export type $MainPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    name: "Main";
+    objects: {};
+    scalars: runtime.Types.Extensions.GetPayloadResult<{
+        id: string;
+        username: string;
+        password: string;
+        refreshToken: string | null;
+    }, ExtArgs["result"]["main"]>;
+    composites: {};
+};
+export type MainGetPayload<S extends boolean | null | undefined | MainDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$MainPayload, S>;
+export type MainCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<MainFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: MainCountAggregateInputType | true;
+};
+export interface MainDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: {
+        types: Prisma.TypeMap<ExtArgs>['model']['Main'];
+        meta: {
+            name: 'Main';
+        };
+    };
+    /**
+     * Find zero or one Main that matches the filter.
+     * @param {MainFindUniqueArgs} args - Arguments to find a Main
+     * @example
+     * // Get one Main
+     * const main = await prisma.main.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends MainFindUniqueArgs>(args: Prisma.SelectSubset<T, MainFindUniqueArgs<ExtArgs>>): Prisma.Prisma__MainClient<runtime.Types.Result.GetResult<Prisma.$MainPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find one Main that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {MainFindUniqueOrThrowArgs} args - Arguments to find a Main
+     * @example
+     * // Get one Main
+     * const main = await prisma.main.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends MainFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, MainFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__MainClient<runtime.Types.Result.GetResult<Prisma.$MainPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find the first Main that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MainFindFirstArgs} args - Arguments to find a Main
+     * @example
+     * // Get one Main
+     * const main = await prisma.main.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends MainFindFirstArgs>(args?: Prisma.SelectSubset<T, MainFindFirstArgs<ExtArgs>>): Prisma.Prisma__MainClient<runtime.Types.Result.GetResult<Prisma.$MainPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find the first Main that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MainFindFirstOrThrowArgs} args - Arguments to find a Main
+     * @example
+     * // Get one Main
+     * const main = await prisma.main.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends MainFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, MainFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__MainClient<runtime.Types.Result.GetResult<Prisma.$MainPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find zero or more Mains that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MainFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Mains
+     * const mains = await prisma.main.findMany()
+     *
+     * // Get first 10 Mains
+     * const mains = await prisma.main.findMany({ take: 10 })
+     *
+     * // Only select the `id`
+     * const mainWithIdOnly = await prisma.main.findMany({ select: { id: true } })
+     *
+     */
+    findMany<T extends MainFindManyArgs>(args?: Prisma.SelectSubset<T, MainFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MainPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
+    /**
+     * Create a Main.
+     * @param {MainCreateArgs} args - Arguments to create a Main.
+     * @example
+     * // Create one Main
+     * const Main = await prisma.main.create({
+     *   data: {
+     *     // ... data to create a Main
+     *   }
+     * })
+     *
+     */
+    create<T extends MainCreateArgs>(args: Prisma.SelectSubset<T, MainCreateArgs<ExtArgs>>): Prisma.Prisma__MainClient<runtime.Types.Result.GetResult<Prisma.$MainPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Create many Mains.
+     * @param {MainCreateManyArgs} args - Arguments to create many Mains.
+     * @example
+     * // Create many Mains
+     * const main = await prisma.main.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     */
+    createMany<T extends MainCreateManyArgs>(args?: Prisma.SelectSubset<T, MainCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Create many Mains and returns the data saved in the database.
+     * @param {MainCreateManyAndReturnArgs} args - Arguments to create many Mains.
+     * @example
+     * // Create many Mains
+     * const main = await prisma.main.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Create many Mains and only return the `id`
+     * const mainWithIdOnly = await prisma.main.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    createManyAndReturn<T extends MainCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, MainCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MainPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
+    /**
+     * Delete a Main.
+     * @param {MainDeleteArgs} args - Arguments to delete one Main.
+     * @example
+     * // Delete one Main
+     * const Main = await prisma.main.delete({
+     *   where: {
+     *     // ... filter to delete one Main
+     *   }
+     * })
+     *
+     */
+    delete<T extends MainDeleteArgs>(args: Prisma.SelectSubset<T, MainDeleteArgs<ExtArgs>>): Prisma.Prisma__MainClient<runtime.Types.Result.GetResult<Prisma.$MainPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Update one Main.
+     * @param {MainUpdateArgs} args - Arguments to update one Main.
+     * @example
+     * // Update one Main
+     * const main = await prisma.main.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    update<T extends MainUpdateArgs>(args: Prisma.SelectSubset<T, MainUpdateArgs<ExtArgs>>): Prisma.Prisma__MainClient<runtime.Types.Result.GetResult<Prisma.$MainPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Delete zero or more Mains.
+     * @param {MainDeleteManyArgs} args - Arguments to filter Mains to delete.
+     * @example
+     * // Delete a few Mains
+     * const { count } = await prisma.main.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     *
+     */
+    deleteMany<T extends MainDeleteManyArgs>(args?: Prisma.SelectSubset<T, MainDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Update zero or more Mains.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MainUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Mains
+     * const main = await prisma.main.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    updateMany<T extends MainUpdateManyArgs>(args: Prisma.SelectSubset<T, MainUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Update zero or more Mains and returns the data updated in the database.
+     * @param {MainUpdateManyAndReturnArgs} args - Arguments to update many Mains.
+     * @example
+     * // Update many Mains
+     * const main = await prisma.main.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Update zero or more Mains and only return the `id`
+     * const mainWithIdOnly = await prisma.main.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    updateManyAndReturn<T extends MainUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, MainUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MainPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
+    /**
+     * Create or update one Main.
+     * @param {MainUpsertArgs} args - Arguments to update or create a Main.
+     * @example
+     * // Update or create a Main
+     * const main = await prisma.main.upsert({
+     *   create: {
+     *     // ... data to create a Main
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Main we want to update
+     *   }
+     * })
+     */
+    upsert<T extends MainUpsertArgs>(args: Prisma.SelectSubset<T, MainUpsertArgs<ExtArgs>>): Prisma.Prisma__MainClient<runtime.Types.Result.GetResult<Prisma.$MainPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Count the number of Mains.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MainCountArgs} args - Arguments to filter Mains to count.
+     * @example
+     * // Count the number of Mains
+     * const count = await prisma.main.count({
+     *   where: {
+     *     // ... the filter for the Mains we want to count
+     *   }
+     * })
+    **/
+    count<T extends MainCountArgs>(args?: Prisma.Subset<T, MainCountArgs>): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<'select', any> ? T['select'] extends true ? number : Prisma.GetScalarType<T['select'], MainCountAggregateOutputType> : number>;
+    /**
+     * Allows you to perform aggregations operations on a Main.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MainAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends MainAggregateArgs>(args: Prisma.Subset<T, MainAggregateArgs>): Prisma.PrismaPromise<GetMainAggregateType<T>>;
+    /**
+     * Group by Main.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {MainGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+    **/
+    groupBy<T extends MainGroupByArgs, HasSelectOrTake extends Prisma.Or<Prisma.Extends<'skip', Prisma.Keys<T>>, Prisma.Extends<'take', Prisma.Keys<T>>>, OrderByArg extends Prisma.True extends HasSelectOrTake ? {
+        orderBy: MainGroupByArgs['orderBy'];
+    } : {
+        orderBy?: MainGroupByArgs['orderBy'];
+    }, OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>, ByFields extends Prisma.MaybeTupleToUnion<T['by']>, ByValid extends Prisma.Has<ByFields, OrderFields>, HavingFields extends Prisma.GetHavingFields<T['having']>, HavingValid extends Prisma.Has<ByFields, HavingFields>, ByEmpty extends T['by'] extends never[] ? Prisma.True : Prisma.False, InputErrors extends ByEmpty extends Prisma.True ? `Error: "by" must not be empty.` : HavingValid extends Prisma.False ? {
+        [P in HavingFields]: P extends ByFields ? never : P extends string ? `Error: Field "${P}" used in "having" needs to be provided in "by".` : [
+            Error,
+            'Field ',
+            P,
+            ` in "having" needs to be provided in "by"`
+        ];
+    }[HavingFields] : 'take' extends Prisma.Keys<T> ? 'orderBy' extends Prisma.Keys<T> ? ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields] : 'Error: If you provide "take", you also need to provide "orderBy"' : 'skip' extends Prisma.Keys<T> ? 'orderBy' extends Prisma.Keys<T> ? ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields] : 'Error: If you provide "skip", you also need to provide "orderBy"' : ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields]>(args: Prisma.SubsetIntersection<T, MainGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMainGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the Main model
+     */
+    readonly fields: MainFieldRefs;
+}
+/**
+ * The delegate class that acts as a "Promise-like" for Main.
+ * Why is this prefixed with `Prisma__`?
+ * Because we want to prevent naming conflicts as mentioned in
+ * https://github.com/prisma/prisma-client-js/issues/707
+ */
+export interface Prisma__MainClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise";
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
+}
+/**
+ * Fields of the Main model
+ */
+export interface MainFieldRefs {
+    readonly id: Prisma.FieldRef<"Main", 'String'>;
+    readonly username: Prisma.FieldRef<"Main", 'String'>;
+    readonly password: Prisma.FieldRef<"Main", 'String'>;
+    readonly refreshToken: Prisma.FieldRef<"Main", 'String'>;
+}
+/**
+ * Main findUnique
+ */
+export type MainFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Main
+     */
+    select?: Prisma.MainSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Main
+     */
+    omit?: Prisma.MainOmit<ExtArgs> | null;
+    /**
+     * Filter, which Main to fetch.
+     */
+    where: Prisma.MainWhereUniqueInput;
+};
+/**
+ * Main findUniqueOrThrow
+ */
+export type MainFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Main
+     */
+    select?: Prisma.MainSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Main
+     */
+    omit?: Prisma.MainOmit<ExtArgs> | null;
+    /**
+     * Filter, which Main to fetch.
+     */
+    where: Prisma.MainWhereUniqueInput;
+};
+/**
+ * Main findFirst
+ */
+export type MainFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Main
+     */
+    select?: Prisma.MainSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Main
+     */
+    omit?: Prisma.MainOmit<ExtArgs> | null;
+    /**
+     * Filter, which Main to fetch.
+     */
+    where?: Prisma.MainWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of Mains to fetch.
+     */
+    orderBy?: Prisma.MainOrderByWithRelationInput | Prisma.MainOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for Mains.
+     */
+    cursor?: Prisma.MainWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` Mains from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` Mains.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of Mains.
+     */
+    distinct?: Prisma.MainScalarFieldEnum | Prisma.MainScalarFieldEnum[];
+};
+/**
+ * Main findFirstOrThrow
+ */
+export type MainFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Main
+     */
+    select?: Prisma.MainSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Main
+     */
+    omit?: Prisma.MainOmit<ExtArgs> | null;
+    /**
+     * Filter, which Main to fetch.
+     */
+    where?: Prisma.MainWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of Mains to fetch.
+     */
+    orderBy?: Prisma.MainOrderByWithRelationInput | Prisma.MainOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for Mains.
+     */
+    cursor?: Prisma.MainWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` Mains from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` Mains.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of Mains.
+     */
+    distinct?: Prisma.MainScalarFieldEnum | Prisma.MainScalarFieldEnum[];
+};
+/**
+ * Main findMany
+ */
+export type MainFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Main
+     */
+    select?: Prisma.MainSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Main
+     */
+    omit?: Prisma.MainOmit<ExtArgs> | null;
+    /**
+     * Filter, which Mains to fetch.
+     */
+    where?: Prisma.MainWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of Mains to fetch.
+     */
+    orderBy?: Prisma.MainOrderByWithRelationInput | Prisma.MainOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for listing Mains.
+     */
+    cursor?: Prisma.MainWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` Mains from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` Mains.
+     */
+    skip?: number;
+    distinct?: Prisma.MainScalarFieldEnum | Prisma.MainScalarFieldEnum[];
+};
+/**
+ * Main create
+ */
+export type MainCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Main
+     */
+    select?: Prisma.MainSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Main
+     */
+    omit?: Prisma.MainOmit<ExtArgs> | null;
+    /**
+     * The data needed to create a Main.
+     */
+    data: Prisma.XOR<Prisma.MainCreateInput, Prisma.MainUncheckedCreateInput>;
+};
+/**
+ * Main createMany
+ */
+export type MainCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Mains.
+     */
+    data: Prisma.MainCreateManyInput | Prisma.MainCreateManyInput[];
+    skipDuplicates?: boolean;
+};
+/**
+ * Main createManyAndReturn
+ */
+export type MainCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Main
+     */
+    select?: Prisma.MainSelectCreateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Main
+     */
+    omit?: Prisma.MainOmit<ExtArgs> | null;
+    /**
+     * The data used to create many Mains.
+     */
+    data: Prisma.MainCreateManyInput | Prisma.MainCreateManyInput[];
+    skipDuplicates?: boolean;
+};
+/**
+ * Main update
+ */
+export type MainUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Main
+     */
+    select?: Prisma.MainSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Main
+     */
+    omit?: Prisma.MainOmit<ExtArgs> | null;
+    /**
+     * The data needed to update a Main.
+     */
+    data: Prisma.XOR<Prisma.MainUpdateInput, Prisma.MainUncheckedUpdateInput>;
+    /**
+     * Choose, which Main to update.
+     */
+    where: Prisma.MainWhereUniqueInput;
+};
+/**
+ * Main updateMany
+ */
+export type MainUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Mains.
+     */
+    data: Prisma.XOR<Prisma.MainUpdateManyMutationInput, Prisma.MainUncheckedUpdateManyInput>;
+    /**
+     * Filter which Mains to update
+     */
+    where?: Prisma.MainWhereInput;
+    /**
+     * Limit how many Mains to update.
+     */
+    limit?: number;
+};
+/**
+ * Main updateManyAndReturn
+ */
+export type MainUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Main
+     */
+    select?: Prisma.MainSelectUpdateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Main
+     */
+    omit?: Prisma.MainOmit<ExtArgs> | null;
+    /**
+     * The data used to update Mains.
+     */
+    data: Prisma.XOR<Prisma.MainUpdateManyMutationInput, Prisma.MainUncheckedUpdateManyInput>;
+    /**
+     * Filter which Mains to update
+     */
+    where?: Prisma.MainWhereInput;
+    /**
+     * Limit how many Mains to update.
+     */
+    limit?: number;
+};
+/**
+ * Main upsert
+ */
+export type MainUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Main
+     */
+    select?: Prisma.MainSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Main
+     */
+    omit?: Prisma.MainOmit<ExtArgs> | null;
+    /**
+     * The filter to search for the Main to update in case it exists.
+     */
+    where: Prisma.MainWhereUniqueInput;
+    /**
+     * In case the Main found by the `where` argument doesn't exist, create a new Main with this data.
+     */
+    create: Prisma.XOR<Prisma.MainCreateInput, Prisma.MainUncheckedCreateInput>;
+    /**
+     * In case the Main was found with the provided `where` argument, update it with this data.
+     */
+    update: Prisma.XOR<Prisma.MainUpdateInput, Prisma.MainUncheckedUpdateInput>;
+};
+/**
+ * Main delete
+ */
+export type MainDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Main
+     */
+    select?: Prisma.MainSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Main
+     */
+    omit?: Prisma.MainOmit<ExtArgs> | null;
+    /**
+     * Filter which Main to delete.
+     */
+    where: Prisma.MainWhereUniqueInput;
+};
+/**
+ * Main deleteMany
+ */
+export type MainDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Filter which Mains to delete
+     */
+    where?: Prisma.MainWhereInput;
+    /**
+     * Limit how many Mains to delete.
+     */
+    limit?: number;
+};
+/**
+ * Main without action
+ */
+export type MainDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Main
+     */
+    select?: Prisma.MainSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Main
+     */
+    omit?: Prisma.MainOmit<ExtArgs> | null;
+};
+export {};
+//# sourceMappingURL=Main.d.ts.map
